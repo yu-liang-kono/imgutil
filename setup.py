@@ -3,11 +3,9 @@
 from os.path import exists
 from setuptools import setup, find_packages
 
-from imgutil import __version__
-
 setup(
     name='imgutil',
-    version=__version__,
+    version='0.1.0',
     # Your name & email here
     author='yuliang',
     author_email='yu.liang@thekono.com',
@@ -25,8 +23,5 @@ setup(
     # Any requirements here, e.g. "Django >= 1.1.1"
     install_requires=[
         'Pillow',
-        'sure',
-        'nose',
-        'nose-watch',
     ],
 )
