@@ -39,7 +39,7 @@ def imgresize(input_filename, width=None, height=None, output_filename=None):
     resized_img = img.resize((width, height), Image.ANTIALIAS)
 
     if output_filename is None:
-        resized_img.save(input_filename)
+        resized_img.save(input_filename, quality=95)
     else:
-        resized_img.save(output_filename)
+        resized_img.save(output_filename, quality=95)
 
