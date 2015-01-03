@@ -25,14 +25,17 @@ def imgoptimize(input_filename, output_filename=None):
 
     """
 
-    im = Image.open(input_filename)
-    img_format = im.format.lower()
-    if im.getbands() == ('C', 'M', 'Y', 'K'):
-        with closing(NamedTemporaryFile(suffix='.%s' % img_format,
-                                        delete=False)) as f:
-            rgb_im = im.convert(mode='RGB')
-            rgb_im.save(f.name)
-            input_filename = f.name
+    with closing(Image.open(input_filename)) as im:
+        img_format = im.format.lower()
+
+        if im.getbands() == ('C', 'M', 'Y', 'K'):
+            kwargs = dict(suffix='.%s' % img_format, delete=False)
+
+            with closing(NamedTemporaryFile(**kwargs)) as f:
+                with closing(im.convert('RGB')) as rgb_im:
+                    rgb_im.save(f.name)
+
+                input_filename = f.name
 
     if img_format == 'jpeg':
         optimized_img = _optimize_jpeg(input_filename)

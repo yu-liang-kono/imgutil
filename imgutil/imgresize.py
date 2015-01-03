@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 # standard library imports
+from contextlib import closing
 
 # third party related imports
 from PIL import Image
@@ -27,19 +28,14 @@ def imgresize(input_filename, width=None, height=None, output_filename=None):
     if width is None and height is None:
         raise ValueError('width and height are None')
 
-    img = Image.open(input_filename)
-    original_width, original_height = img.size
+    with closing(Image.open(input_filename)) as img:
+        original_width, original_height = img.size
 
-    if width is None:
-        width = int(1.0 * original_width / original_height * height + 0.5)
+        if width is None:
+            width = int(1.0 * original_width / original_height * height + 0.5)
 
-    if height is None:
-        height = int(1.0 * original_height / original_width * width + 0.5)
+        if height is None:
+            height = int(1.0 * original_height / original_width * width + 0.5)
 
-    resized_img = img.resize((width, height), Image.ANTIALIAS)
-
-    if output_filename is None:
-        resized_img.save(input_filename, quality=95)
-    else:
-        resized_img.save(output_filename, quality=95)
-
+        with closing(img.resize((width, height), Image.ANTIALIAS)) as resized:
+            resized.save(output_filename or input_filename, quality=95)
