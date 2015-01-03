@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='imgutil',
-    version='0.1.1',
+    version='0.1.2',
     # Your name & email here
     author='yuliang',
     author_email='yu.liang@thekono.com',
