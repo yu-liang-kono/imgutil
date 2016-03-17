@@ -1,25 +1,33 @@
+=======
 imgutil
 =======
 
 Image operation utility
+-----------------------
 
+============
 Installation
-------------
+============
 
-Installation using pip::
+Installation using pip:
+```
+pip install imgutil
+```
 
-    pip install imgutil
-
+============
 Prerequesite
-------------
+============
 
 - jpegtran
 - pngcrush
 
+======================
 Command line utilities
-----------------------
+======================
 
-### imgoptimize
+imgoptimize
+-----------
+
 ```
 imgoptimize [-h] [-o OUTPUT] src_img
 ```
@@ -29,10 +37,12 @@ imgoptimize [-h] [-o OUTPUT] src_img
     - `src_img`: Specify the input image.
 
 
+=====
 Usage
------
+=====
 
-### imgoptimize
+imgoptimize
+-----------
 - `imgoptimize(input_filename, output_filename=None)`
 - It reduces jpeg/png file size.
 - It converts CMYK to RGB.
@@ -51,7 +61,8 @@ Usage
     >>> os.stat(test_img).st_size
     81026
 
-### imgresize
+imgresize
+---------
 - `imgresize(input_filename, width=None, height=None, output_filename=None)`
 - It can resize image and preserve aspect ratio.
 - It can resize image to specified dimension.
