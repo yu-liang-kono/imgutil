@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='imgutil',
-    version='0.1.2',
+    version='0.1.3',
     # Your name & email here
     author='yuliang',
     author_email='yu.liang@thekono.com',
@@ -19,7 +19,7 @@ setup(
     license='',
     # Put a nice one-liner description here
     description='Image operation utilities.',
-    long_description=open('README.md').read() if exists("README.md") else "",
+    long_description=open('README.rst').read() if exists("README.rst") else "",
     # Any requirements here, e.g. "Django >= 1.1.1"
     install_requires=[
         'Pillow >= 2.7.0',
