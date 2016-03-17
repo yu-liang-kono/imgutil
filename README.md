@@ -22,11 +22,12 @@ Command line utilities
 ### imgoptimize
 - Optimize image to reduce file size.
 - Usage:
+    - `-o`: Specifiy the output image.
+    - `src_img`: Specify the input image.
+
 ```
 imgoptimize [-h] [-o OUTPUT] src_img
 ```
-    - `-o`: Specifiy the output image.
-    - `src_img`: Specify the input image.
 
 
 Usage
