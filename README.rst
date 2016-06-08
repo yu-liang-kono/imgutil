@@ -42,7 +42,7 @@ imgresize
 
 .. code-block:: bash
 
-    $ imgresize [-h] [-o OUTPUT] [-w WIDTH] [--height HEIGHT] src_img
+    $ imgresize [-h] [-o OUTPUT] [-W WIDTH] [-H HEIGHT] src_img
 
 * Resize image by specifying width or height.
 
@@ -50,8 +50,8 @@ Usage
 `````
 
 * ``-o``: (Optional) Specifiy the output image.
-* ``-w`` or ``--width``: (Optional) Specify the desired image width. If only width is specified, height will be determined by the aspect ratio of image.
-* ``--height``: (Optional) Specify the desired image height. If only height is specified, width will be determined by the aspect ratio of image.
+* ``-W`` or ``--width``: (Optional) Specify the desired image width. If only width is specified, height will be determined by the aspect ratio of image.
+* ``-H`` or ``--height``: (Optional) Specify the desired image height. If only height is specified, width will be determined by the aspect ratio of image.
 * ``src_img``: Specify the input image.
 
 
