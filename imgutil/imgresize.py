@@ -28,6 +28,12 @@ def imgresize(input_filename, width=None, height=None, output_filename=None):
     if width is None and height is None:
         raise ValueError('width and height are None')
 
+    if width is not None and width <= 0:
+        raise ValueError('width must be greater than 0')
+
+    if height is not None and height <= 0:
+        raise ValueError('height must be greater than 0')
+
     with closing(Image.open(input_filename)) as img:
         original_width, original_height = img.size
 
