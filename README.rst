@@ -6,9 +6,10 @@ Image operation utility
 Installation
 ------------
 
-Installation using pip::
+Installation using pip
 
-.. code-block:: bash
+.. code-block:: python 
+
     $ pip install imgutil
 
 
@@ -24,6 +25,7 @@ Command line utilities
 ### imgoptimize
 
 .. code-block:: bash
+
     $ imgoptimize [-h] [-o OUTPUT] src_img
 
 - Optimize image to reduce file size.
@@ -34,6 +36,7 @@ Command line utilities
 ### imgresize
 
 .. code-block:: bash
+
     $ imgresize [-h] [-o OUTPUT] [-w WIDTH] [--height HEIGHT] src_img
 
 - Resize image by specifying width or height.
@@ -81,7 +84,10 @@ Usage
 
 **quick example**
 
+.. code-block: python
+
     from imgutil import imgresize
+
     test_img = '/tmp/test.jpg'    # It is a 1024x768 image
     imgresize(test_img, width=600, output_filename='/tmp/resize.jpg') # /tmp/resize.jpg is 600x450
     imgresize(test_img, height=600, output_filename='/tmp/resize.jpg') # /tmp/resize.jpg is 800x600
