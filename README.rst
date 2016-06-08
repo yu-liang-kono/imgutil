@@ -8,7 +8,7 @@ Installation
 
 Installation using pip
 
-.. code-block:: python 
+.. code-block:: bash 
 
     $ pip install imgutil
 
@@ -16,52 +16,62 @@ Installation using pip
 Prerequesite
 ------------
 
-- jpegtran
-- pngcrush
+* jpegtran
+* pngcrush
 
 Command line utilities
 ----------------------
 
-### imgoptimize
+imgoptimize
+~~~~~~~~~~~
 
 .. code-block:: bash
 
     $ imgoptimize [-h] [-o OUTPUT] src_img
 
-- Optimize image to reduce file size.
-- Usage:
-    - `-o`: (Optional) Specifiy the output image.
-    - `src_img`: Specify the input image.
+* Optimize image to reduce file size.
+* Should install ``jpegtran`` and ``pngcrush``.
 
-### imgresize
+Usage
+`````
+* ``-o``: (Optional) Specifiy the output image.
+* ``src_img``: Specify the input image.
+
+imgresize
+~~~~~~~~~
 
 .. code-block:: bash
 
     $ imgresize [-h] [-o OUTPUT] [-w WIDTH] [--height HEIGHT] src_img
 
-- Resize image by specifying width or height.
-- Usage:
-    - `-o`: (Optional) Specifiy the output image.
-    - `-w` or `--width`: (Optional) Specify the desired image width. If only width is specified, height will be determined by the aspect ratio of image.
-    - `-h` or `--height`: (Optional) Specify the desired image height. If only height is specified, width will be determined by the aspect ratio of image.
-    - `src_img`: Specify the input image.
+* Resize image by specifying width or height.
+
+Usage
+`````
+
+* ``-o``: (Optional) Specifiy the output image.
+* ``-w`` or ``--width``: (Optional) Specify the desired image width. If only width is specified, height will be determined by the aspect ratio of image.
+* ``--height``: (Optional) Specify the desired image height. If only height is specified, width will be determined by the aspect ratio of image.
+* ``src_img``: Specify the input image.
 
 
 Usage
 -----
 
-### imgoptimize
+imgoptimize
+~~~~~~~~~~~
 
-.. code-block: python
+.. code-block:: python
 
     imgoptimize(input_filename, output_filename=None)
 
-- It reduces jpeg/png file size.
-- It converts CMYK to RGB.
+* Should install ``jpegtran`` and ``pngcrush``.
+* It reduces jpeg/png file size.
+* It converts CMYK to RGB.
 
 **quick example**
 
-.. code-block: python
+.. code-block:: python
 
     import os
     from imgutil import imgoptimize
@@ -73,18 +83,19 @@ Usage
     imgoptimize(test_img)                  # optimize the original file
     os.stat(test_img).st_size              # 81026
 
-### imgresize
+imgresize
+~~~~~~~~~
 
-.. code-block: python
+.. code-block:: python
 
     imgresize(input_filename, width=None, height=None, output_filename=None)
 
-- It can resize image and preserve aspect ratio.
-- It can resize image to specified dimension.
+* It can resize image and preserve aspect ratio.
+* It can resize image to specified dimension.
 
 **quick example**
 
-.. code-block: python
+.. code-block:: python
 
     from imgutil import imgresize
 
